@@ -49,11 +49,32 @@ public class CodeJamRopeIntranet {
 		System.err.printf("Loading data from \"%1$s\"\n", infileopt);
 		loadData();  //load the data into data structure
 		
-		printOpts();
+		printOpts();  //print out the program options
+		
+		//solve them
+		solve();
+		
+		//write out the solutions
+		writeOut();
 		
 		System.err.printf("Finished in %1$dms\n", System.currentTimeMillis() - starttime);
 	}
 
+	public void writeOut() {
+		
+		for( DataStructure testcase : testcases ) {  //iterate through all cases
+			outfile.printf("Case #%1$d: %2$d\n", testcase.casenum, testcase.solution);
+		}
+	}
+	
+	//start the solution for each case
+	private void solve() {
+		for( DataStructure testcase : testcases ) {  //iterate through all cases
+			testcase.solve();
+			System.err.printf("Case #%1$d solved in %2$dms\tAns=%3$d\n", testcase.casenum, testcase.solvetime, testcase.solution);
+		}
+	}
+	
 	//print out the program options
 	private void printOpts() {
 		

@@ -17,9 +17,33 @@ public class DataStructure {
 	
 	public Wire[] wiremap;
 	
+	public int solution;
+	
+	public long solvetime;
+	
 	//functions
 	DataStructure(int newcasenum) {
 		super();
 		casenum = newcasenum;
+		solution = 0;
 	}
+	
+	public void solve() {
+		long starttime = System.currentTimeMillis();  //set the start time
+		
+		//solve for each wire
+		for( int i = 0; i < wirecount; i++) {
+			
+			//compare each wire to the wires bellow it
+			for( int c = i + 1; c < wirecount; c++) {
+				if( wiremap[i].doesCross(wiremap[c]) ) {
+					solution++;
+				}
+			}
+			
+		}
+		
+		solvetime = System.currentTimeMillis() - starttime;  //get the start time
+	}
+	
 }

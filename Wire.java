@@ -20,4 +20,14 @@ public class Wire {
 		wirenum = wirenumin;
 	}
 	
+	public boolean doesCross(Wire otherwire) {
+		boolean leftisabove, rightisabove; 
+		
+		leftisabove = leftwindow > otherwire.leftwindow;
+		rightisabove = rightwindow > otherwire.rightwindow;
+		
+		return !(rightisabove == leftisabove);  //should return true if they cross and false if they dont
+		
+	}
+	
 }
