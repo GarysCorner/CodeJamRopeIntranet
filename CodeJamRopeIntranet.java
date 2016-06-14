@@ -58,6 +58,7 @@ public class CodeJamRopeIntranet {
 			totalcases = Integer.valueOf(readLine());
 		}catch(NumberFormatException e) {
 			System.err.printf("Could not parse testcase number from \"%1$s\"", infileopt);
+			System.exit(4);
 		}
 		
 		//initialize data structure
@@ -65,8 +66,41 @@ public class CodeJamRopeIntranet {
 		
 		//input all cases
 		for(int i = 0; i < totalcases; i++ ) {
-			testcases[i] = new DataStructure(i+1);
+			testcases[i] = new DataStructure(i+1); //initialize data element with casenum
+			
+			//try and get the wirecount
+			try{
+				testcases[i].wirecount = Integer.valueOf(readLine());
+			} catch(NumberFormatException e) {
+				System.err.printf("Could not parse wirecount for case #%1$d", testcases[i].casenum);
+				System.exit(5);
+			}
+			
+			//for each wire input data
+			for(int c=0; c < testcases[i].wirecount; c++) {
+				String[] wireline = readLine().split(" ");
+				
+				if( wireline.length != 2) {  //if wirelength not correct
+					System.err.printf("Bad wire offset(%1$d) case #%2$d", c, testcases[i].casenum);
+					System.exit(6);
+				}
+				
+				//try and parse the wireline into numbers
+				try {
+					
+				}catch(NumberFormatException e) {
+					System.err.printf("Could not parse wiremap (%1$d) case #%2$d", c, testcases[i].casenum);
+					System.exit(7);
+				}
+				}
+				
+			}
+		
+			
+			
 		}
+		
+		
 		
 	}
 	

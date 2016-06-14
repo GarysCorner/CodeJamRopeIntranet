@@ -7,10 +7,14 @@ package net.garyscorner.codejamropeintranet;
 //Problem:	https://code.google.com/codejam/contest/619102/dashboard#s=p0
 //Results:
 
+
 public class DataStructure {
 	
 	//variables
 	public int casenum;
+	
+	public int wirecount; //number of wires total
+	
 	
 	//functions
 	DataStructure(int newcasenum) {
