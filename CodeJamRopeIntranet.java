@@ -5,7 +5,7 @@ package net.garyscorner.codejamropeintranet;
 //Date:		2016-06-14
 //Desc:		Designed for google code jam practice problem "Rope Intranet" from round 1C in 2010
 //Problem:	https://code.google.com/codejam/contest/619102/dashboard#s=p0
-//Results:	  
+//Results:	Small problem:  40ms	Large Problem:379ms 
 
 
 import java.io.BufferedReader;
@@ -46,7 +46,7 @@ public class CodeJamRopeIntranet {
 		
 		openFiles();  //open the input and output files
 		
-		System.err.printf("Loading data from \"%1$s\"\n", infileopt);
+		System.err.printf("Loading data from \"%1$s\"\n\n\n", infileopt);
 		loadData();  //load the data into data structure
 		
 		printOpts();  //print out the program options
