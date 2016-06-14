@@ -46,10 +46,24 @@ public class CodeJamRopeIntranet {
 		
 		openFiles();  //open the input and output files
 		
+		System.err.printf("Loading data from \"%1$s\"\n", infileopt);
 		loadData();  //load the data into data structure
 		
+		printOpts();
+		
+		System.err.printf("Finished in %1$dms\n", System.currentTimeMillis() - starttime);
 	}
 
+	//print out the program options
+	private void printOpts() {
+		
+		System.err.printf("Infile:\t%1$s\n", infileopt );
+		System.err.printf("Outfile:\t%1$s\n", outfileopt);
+		System.err.printf("Total Cases:\t%1$d\n\n", totalcases);
+		
+		
+	}
+	
 	//load all data from the infile
 	private void loadData() {
 		
@@ -57,7 +71,7 @@ public class CodeJamRopeIntranet {
 		try{
 			totalcases = Integer.valueOf(readLine());
 		}catch(NumberFormatException e) {
-			System.err.printf("Could not parse testcase number from \"%1$s\"", infileopt);
+			System.err.printf("Could not parse testcase number from \"%1$s\"\n", infileopt);
 			System.exit(4);
 		}
 		
@@ -72,12 +86,18 @@ public class CodeJamRopeIntranet {
 			try{
 				testcases[i].wirecount = Integer.valueOf(readLine());
 			} catch(NumberFormatException e) {
-				System.err.printf("Could not parse wirecount for case #%1$d", testcases[i].casenum);
+				System.err.printf("Could not parse wirecount for case #%1$d\n", testcases[i].casenum);
 				System.exit(5);
 			}
 			
+			//initialize wiremap
+			testcases[i].wiremap = new Wire[testcases[i].wirecount];
+			
 			//for each wire input data
 			for(int c=0; c < testcases[i].wirecount; c++) {
+				
+				
+				//read the line and split it into two values
 				String[] wireline = readLine().split(" ");
 				
 				if( wireline.length != 2) {  //if wirelength not correct
@@ -87,12 +107,12 @@ public class CodeJamRopeIntranet {
 				
 				//try and parse the wireline into numbers
 				try {
-					
+					testcases[i].wiremap[c] = new Wire(c+1, Integer.valueOf(wireline[0]), Integer.valueOf(wireline[1]));					
 				}catch(NumberFormatException e) {
 					System.err.printf("Could not parse wiremap (%1$d) case #%2$d", c, testcases[i].casenum);
 					System.exit(7);
 				}
-				}
+				
 				
 			}
 		

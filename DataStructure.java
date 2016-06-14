@@ -15,6 +15,7 @@ public class DataStructure {
 	
 	public int wirecount; //number of wires total
 	
+	public Wire[] wiremap;
 	
 	//functions
 	DataStructure(int newcasenum) {
