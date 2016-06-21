@@ -1,4 +1,4 @@
-package net.garyscorner.codejamropeintranet;
+//package net.garyscorner.codejamropeintranet;
 
 //File:		Wire.java
 //Author:	Gary Bezet
