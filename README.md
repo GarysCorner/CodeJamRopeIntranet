@@ -1,20 +1,13 @@
 #Problem A. Rope Intranet
 ##From https://code.google.com/codejam/contest/619102/dashboard#s=p0
 
-This contest is open for practice. You can try every problem as many times as you like, though we won't keep track of which problems you solve. Read the Quick-Start Guide to get started.
-Small input
-9 points	
-Solve A-small
-Large input
-13 points	
-Solve A-large
 Problem
 
 A company is located in two very tall buildings. The company intranet connecting the buildings consists of many wires, each connecting a window on the first building to a window on the second building.
 
 You are looking at those buildings from the side, so that one of the buildings is to the left and one is to the right. The windows on the left building are seen as points on its right wall, and the windows on the right building are seen as points on its left wall. Wires are straight segments connecting a window on the left building to a window on the right building.
 
-
+![Codejam Image](https://code.google.com/codejam/contest/images/?image=RopeIntranet.png&p=599117&c=619102 "Building")
 
 You've noticed that no two wires share an endpoint (in other words, there's at most one wire going out of each window). However, from your viewpoint, some of the wires intersect midway. You've also noticed that exactly two wires meet at each intersection point.
 
@@ -34,48 +27,37 @@ For each test case, output one line containing "Case #x: y", where x is the case
 
 Limits
 
+```
 1 ≤ T ≤ 15.
 1 ≤ Ai ≤ 104.
 1 ≤ Bi ≤ 104.
 Within each test case, all Ai are different.
 Within each test case, all Bi are different.
 No three wires intersect at the same point.
+```
 
 Small dataset
-
+```
 1 ≤ N ≤ 2.
-
+```
 Large dataset
-
+```
 1 ≤ N ≤ 1000.
+```
 
-Sample
-
-
-
- 	
 ###Input 
- 
+```
 2
-
 3
-
 1 10
-
 5 5
-
 7 7
-
 2
-
 1 1
-
 2 2
-
-
+```
 ###Output
+```
 Case #1: 2
-
 Case #2: 0
-
-
+```
